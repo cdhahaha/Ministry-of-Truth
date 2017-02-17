@@ -1,0 +1,22 @@
+<ion-content>
+    <div class="item" my-location></div>
+    <div class="item">
+        父作用域{{obj}}: <input type="text" ng-model="hi">
+    </div>
+    <div ng-controller="TestController">
+        <input ng-model="name" type="text" placeholder="Recipient" />
+        <textarea ng-model="emailBody"></textarea>
+        <pre>{{previewText}}</pre>
+        <div>{{data | testCd}}</div>
+        <form name="cdForm">
+            <input ng-Focus  ng-class="{error: cdForm.say.$dirty && cdForm.say.$invalid}"  name='say' ng-model='say.name'  set-list="name"  type="text" placeholder="say u name" ng-pattern="sayName">
+            <div ng-show="cdForm.say.$dirty && cdForm.say.$invalid">wrong</div>
+            <div ng-show="cdForm.say.$error.unique">唯一性</div>
+        </form>
+        <input type="text" ng-model="switchFor" placeholder="开关">
+        <div ng-switch on="switchFor">
+            <div ng-switch-default>ha</div>
+            <div ng-switch-when="cd" ng-bind="switchFor"></div>
+        </div>
+    </div>
+</ion-content>
